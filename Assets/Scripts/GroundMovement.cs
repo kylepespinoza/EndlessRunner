@@ -12,4 +12,12 @@ public class GroundMovement : MonoBehaviour {
 	void Update () {
         transform.Translate(Vector3.back * Time.deltaTime * speed);
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "GroundPieceDestroyer")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
